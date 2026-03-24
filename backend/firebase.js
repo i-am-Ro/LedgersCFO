@@ -61,14 +61,16 @@ if (!db) {
       get: async () => {
         const data = readMockDb();
         const docs = data[collName] || [];
-        return { docs: docs.map(doc => ({ id: doc.id, data: () => doc })) };
+        const mappedDocs = docs.map(doc => ({ id: doc.id, data: () => doc }));
+        return { docs: mappedDocs, empty: mappedDocs.length === 0 };
       },
       where: (field, op, value) => ({
         get: async () => {
           const data = readMockDb();
           const docs = data[collName] || [];
           const filtered = docs.filter(doc => (op === '==' ? doc[field] === value : false));
-          return { docs: filtered.map(doc => ({ id: doc.id, data: () => doc })) };
+          const mappedDocs = filtered.map(doc => ({ id: doc.id, data: () => doc }));
+          return { docs: mappedDocs, empty: mappedDocs.length === 0 };
         }
       }),
       add: async (docData) => {
