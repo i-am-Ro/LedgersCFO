@@ -27,7 +27,8 @@ To meet the requirement for a physical deployed link:
 **Backend (Render.com)**
 1. Create a Web Service on Render, connect your GitHub repo, and set the root directory to `backend`. 
 2. Build command: `npm install`, Start command: `node server.js`.
-3. Add environment variables if needed.
+3. **Environment Variables**: Add an environment variable named `FIREBASE_SERVICE_ACCOUNT`. Set its value to the entire JSON content of your `firebaseServiceKey.json` file.
+4. The backend will automatically detect this variable and use it for Firestore. If missing, it will safely fallback to the mock database instead of crashing.
 
 **Frontend (Vercel)**
 1. Import the repository into Vercel.
