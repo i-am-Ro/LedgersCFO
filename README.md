@@ -15,7 +15,7 @@ A simple web application to track compliance tasks for different clients, built 
    - `npm install`
    - By default, the app uses a **mock local JSON database** (`mockDb.json`) for instant testing. If you want to connect to a real Firebase database:
      - Get your Firebase Service Account JSON key.
-     - Rename it to `firebaseServiceKey.json` and place it in the root folder (`d:\fullStack`).
+     - Rename it to `firebaseServiceKey.json` and place it in the **backend** folder (`d:\fullStack\backend`).
    - Run `npm start` or `node server.js`. The backend will run on `http://localhost:5000`.
 3. **Frontend Setup**:
    - `cd frontend`

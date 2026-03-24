@@ -2,7 +2,7 @@ const admin = require('firebase-admin');
 const fs = require('fs');
 const path = require('path');
 
-const serviceAccountPath = path.join(__dirname, '..', 'firebaseServiceKey.json');
+const serviceAccountPath = path.join(__dirname, 'firebaseServiceKey.json');
 
 let db;
 

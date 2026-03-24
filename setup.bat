@@ -14,6 +14,7 @@ cd backend
 copy NUL package.json
 echo {"name":"backend","version":"1.0.0"} > package.json
 call npm install express cors dotenv firebase-admin
+copy ..\firebaseServiceKey.json .
 
 :: Setup Frontend
 cd d:\fullStack
